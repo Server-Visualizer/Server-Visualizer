@@ -24,10 +24,19 @@ module.exports = {
     const db = this.db;
     return function(req, res, next) {
       // time at request start
-      const start = new Date().getTime();
       // after response is sent, update db with req & res data
       res.on('finish', (err, data) => {
-        db.push({method: req.method, reqTime: start, elapsedTime: new Date().getTime() - start, status: res.statusCode})
+        // calculates elapsed time in [seconds, nanoseconds]
+        const end = process.hrtime(start);
+        // converts end array into milliseconds
+        const endTime = (end[0] * 1000) + (end[1] / 1000000);
+        db.push({
+          method: req.method, 
+          // instantaneous time in milliseconds
+          reqTime: new Date().getTime(), 
+          // calculate elapsed time to three significant digits
+          elapsedTime: Number(endTime.toPrecision(3)), 
+          status: res.statusCode})
       })
       next();
     }
