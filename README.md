@@ -17,5 +17,5 @@ const serverVisualizer = require('server-visualizer');
 serverVisualizer.start(app)();
 
 // records request and response activities
-app.use(serverVisualizer.middleware());
+app.use(serverVisualizer.run());
 ```

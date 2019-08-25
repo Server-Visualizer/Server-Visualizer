@@ -19,7 +19,7 @@ module.exports = {
     }
   },
   // storing request object data into db
-  middleware: function() {
+  run: function() {
     // making copy of db
     const db = this.db;
     return function(req, res, next) {
