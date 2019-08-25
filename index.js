@@ -4,18 +4,21 @@ module.exports = {
   db: [],
   // start() creates two routes to be used in development
   start: function(app, route) {
+    if (!app) throw new Error('instance of app should be first argument')
     // making copy of db
     const db = this.db;
     return function() {
       // creates a route to send visualization file
       // developer can provide path as second argument, or default to "SerVis"
       app.get(`/${route ? route : "SerVis"}`, function(req, res) {
-        res.sendFile(path.join(__dirname + '/index.html'));
-      })
+        res.sendFile(path.join(__dirname + '/index.html'), {}, function(err) {
+          res.status(err.status).send('could not find HTML file');
+        });
+      });
       // creates a route to send data from db
       app.get('/ping', function(req, res) {
-        res.json(db);
-      })
+        res.status(200).json(db);
+      });
     }
   },
   // storing request object data into db
