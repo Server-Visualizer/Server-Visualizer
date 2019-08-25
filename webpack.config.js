@@ -1,15 +1,16 @@
 const path = require('path');
 
 module.exports = {
+  mode: 'development',
   entry: path.resolve(__dirname, 'client/index.js'),
   output: {
     path: path.resolve(__dirname, 'client/build'),
     filename: 'bundle.js'
   },
-  module: {
+  module: { // Setting up the loaders
     rules: [
-      { 
-        test: /\.jsx?/, 
+      { // Setting up JSX transpiling
+        test: /\.jsx?/,
         exclude: /node_modules/,
         use: [
           {
@@ -20,7 +21,7 @@ module.exports = {
           },
         ]
       },
-      {
+      { // Setting up Sass transpiling
         test: /\.scss$/, 
         use: [
           { loader: 'style-loader' },
@@ -30,4 +31,8 @@ module.exports = {
       },
     ],
   },
+  devServer: {
+    publicPath: '/client/build/',
+    port: 8060,
+  }
 }
