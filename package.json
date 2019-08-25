@@ -1,0 +1,71 @@
+{
+  "name": "server-visualizer",
+  "version": "1.0.0",
+  "description": "Server-Visualizer is a lightweight Express middleware that helps developers visualize their server activities.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Server-Visualizer/Server-Visualizer.git"
+  },
+  "keywords": [
+    "server",
+    "request",
+    "express",
+    "visualize",
+    "get",
+    "post"
+  ],
+  "contributors": [
+    {
+      "name": "David Chai",
+      "url": "http://davidchaidev.com"
+    },
+    {
+      "name": "Mohtasim Chowdhury"
+    },
+    {
+      "name": "Yujin Kang",
+      "url": "https://github.com/yujinkay"
+    },
+    {
+      "name": "David Neuhaus"
+    },
+    {
+      "name": "Sam Parsons",
+      "url": "http://sam-parsons.github.io/"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Server-Visualizer/Server-Visualizer/issues"
+  },
+  "homepage": "https://github.com/Server-Visualizer/Server-Visualizer#readme",
+  "dependencies": {
+    "chartist": "^0.11.3",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-jest": "^24.9.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "eslint": "^6.2.2",
+    "jest": "^24.9.0",
+    "node-sass": "^4.12.0",
+    "react-test-renderer": "^16.9.0",
+    "react-testing-library": "^8.0.1",
+    "sass-loader": "^7.3.1",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0"
+  }
+}
