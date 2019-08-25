@@ -1,6 +1,5 @@
 const path = require('path');
 
-// creating middleware object
 module.exports = {
   db: [],
   // start creates two routes to be used in development
@@ -19,7 +18,7 @@ module.exports = {
     }
   },
   // storing request object data into db
-  middleware: function(req, res, next) {
+  middleware: function() {
     // making copy of db
     const db = this.db;
     return function(req, res, next) {
