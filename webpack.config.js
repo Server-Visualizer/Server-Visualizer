@@ -35,5 +35,8 @@ module.exports = {
   devServer: {
     publicPath: '/client/build/',
     port: 8080,
+    proxy: {
+      '/ping': 'http://localhost:3000',
+    }
   }
 }

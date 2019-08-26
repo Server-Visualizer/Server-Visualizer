@@ -1,8 +1,11 @@
 const express = require('express');
 const app = express();
-const port = 5000;
+const port = 3000;
+const sv = require('./index');
 
-app.use(cors());
+sv.start(app, 'sv')();
+
+app.use(sv.run());
 
 app.get('/api', (req, res) => {
     res.json({"message": 'get request'});
