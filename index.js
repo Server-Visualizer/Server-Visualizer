@@ -12,7 +12,9 @@ module.exports = {
       // developer can provide path as second argument, or default to "SerVis"
       app.get(`/${route ? route : "SerVis"}`, function(req, res) {
         res.sendFile(path.join(__dirname + '/client/index.html'), {}, function(err) {
-          res.status(err.status).send('could not find HTML file');
+          if (err) {
+            res.status(err.status).send('could not find HTML file');
+          }
         });
       });
       // creates a route to send data from db
@@ -21,8 +23,10 @@ module.exports = {
       });
       // route for index.HTML to request bundle.js
       app.get('/build', function(req, res) {
-        res.sendFile(path.join(__dirname, 'build/bundle.js'), {}, function(err) {
-          res.status(err.status).send('could not find bundle js file');
+        res.sendFile(path.join(__dirname, '/client/build/bundle.js'), {}, function(err) {
+          if (err) {
+            res.status(err.status).send('could not find bundle js file')
+          };
         });
       });
     }
@@ -32,18 +36,18 @@ module.exports = {
     // making copy of db
     const db = this.db;
     return function(req, res, next) {
+      // time at request start
+      const start = process.hrtime();
       // after response is sent, update db with req & res data
       res.on('finish', (err, data) => {
         if (err) {
           res.status(err.status.send('connection timed out'))
         }
-        // time at request start
-        const start = process.hrtime();
         // calculates elapsed time in [seconds, nanoseconds]
         const end = process.hrtime(start);
         // converts end array into milliseconds
         const endTime = (end[0] * 1000) + (end[1] / 1000000);
-        db.push({
+        db.unshift({
           method: req.method, 
           // instantaneous time in milliseconds
           reqTime: new Date().getTime(), 
