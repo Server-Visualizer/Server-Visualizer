@@ -36,13 +36,13 @@ module.exports = {
     // making copy of db
     const db = this.db;
     return function(req, res, next) {
+      // time at request start
+      const start = process.hrtime();
       // after response is sent, update db with req & res data
       res.on('finish', (err, data) => {
         if (err) {
           res.status(err.status.send('connection timed out'))
         }
-        // time at request start
-        const start = process.hrtime();
         // calculates elapsed time in [seconds, nanoseconds]
         const end = process.hrtime(start);
         // converts end array into milliseconds
