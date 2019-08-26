@@ -17,6 +17,7 @@ module.exports = {
             loader: 'babel-loader', 
             options: {
               presets: ['@babel/preset-react'],
+              plugins: ['@babel/plugin-transform-runtime'],
             },
           },
         ]
@@ -34,5 +35,8 @@ module.exports = {
   devServer: {
     publicPath: '/client/build/',
     port: 8080,
+    proxy: {
+      '/ping': 'http://localhost:3000',
+    }
   }
 }

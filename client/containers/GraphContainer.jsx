@@ -1,6 +1,7 @@
 import React from 'react';
 import RequestContext from '../contexts/RequestContext.jsx';
-import PieChart from '../components/PieChart.jsx'
+import PieChart from '../components/HTTPRequestPieChart.jsx';
+import CodeChart from '../components/StatusCodeChart.jsx';
 
 // Container for all the visualization this app contains
 class Graphs extends React.Component {
@@ -8,6 +9,7 @@ class Graphs extends React.Component {
     return (
       <div id="graph-container">
         <PieChart data={this.context} />
+        <CodeChart data={this.context} />
       </div>
     )
   }

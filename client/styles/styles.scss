@@ -1,3 +1,30 @@
 .request {
     border: solid 1px black;
 }
+
+body {
+  height: 100vh;
+}
+
+#app {
+  display: flex;
+  #graph-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #request-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    height: 100vh;
+  }
+}
+
+
+
+#pie-chart-container {
+  width: 100%;
+}

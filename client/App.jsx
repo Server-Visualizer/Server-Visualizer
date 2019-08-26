@@ -2,6 +2,7 @@ import React from 'react';
 import Graphs from './containers/GraphContainer.jsx';
 import Requests from './containers/RequestContainer.jsx';
 import RequestContext from './contexts/RequestContext.jsx';
+import Placeholder from './components/Placeholder.jsx';
 
 class App extends React.Component {
   constructor() {
@@ -13,13 +14,18 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    (async () => {
+    const fetching = async () => {
       // Grab requests from our mock server
-      const fetched = await fetch('https://sv-mock-data.herokuapp.com/');
+      const fetched = await fetch('/ping');
       // Parsing the response into a readable JS array
       const requests = await fetched.json();
-      this.setState({ requests: requests, tobeRendered: [<Graphs key='Graphs' />, <Requests key='Requests' />] });
-    })();
+      if (!requests.length) {
+        this.setState({ tobeRendered: [<Placeholder key='Placeholder' />] });
+      } else {
+        this.setState({ requests: requests, tobeRendered: [<Graphs key='Graphs' />, <Requests key='Requests' />] });
+      }
+    };
+    setInterval(fetching, 800);
   }
 
   render() {
