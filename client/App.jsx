@@ -19,14 +19,13 @@ class App extends React.Component {
       const fetched = await fetch('/ping');
       // Parsing the response into a readable JS array
       const requests = await fetched.json();
-      console.log(requests);
       if (!requests.length) {
         this.setState({ tobeRendered: [<Placeholder key='Placeholder' />] });
       } else {
         this.setState({ requests: requests, tobeRendered: [<Graphs key='Graphs' />, <Requests key='Requests' />] });
       }
     };
-    setInterval(fetching, 2000);
+    setInterval(fetching, 800);
   }
 
   render() {

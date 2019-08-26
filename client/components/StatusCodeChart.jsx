@@ -10,7 +10,7 @@ class CodeChart extends React.Component {
     this.codeChart;
   }
 
-  createChart(data, ref, animation) {
+  createChart(data, ref, animationDuration) {
     // Saving the count for every status code
     const counter = {};
     // Going through our data via the props to do the counting
@@ -45,7 +45,7 @@ class CodeChart extends React.Component {
           }]
         },
         animation: {
-          duration: animation,
+          duration: animationDuration,
         }
       }
     })
@@ -53,7 +53,7 @@ class CodeChart extends React.Component {
   
   // Once the CodeChart component renders and the ref is assigned to the right DOM component, add the chart in via Chart.JS
   componentDidMount () {
-    this.createChart(this.props.data, this.codeChartLocation, 2000);
+    this.createChart(this.props.data, this.codeChartLocation, 800);
   }
 
   componentDidUpdate () {

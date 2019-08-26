@@ -11,7 +11,7 @@ class PieChart extends React.Component {
     this.pieChart;
   }
 
-  createChart(data, ref, animation) {
+  createChart(data, ref, animationDuration) {
     // Saving the count for every HTTP request type
     const counter = {};
     // Going through our data via the props to do the counting
@@ -39,7 +39,7 @@ class PieChart extends React.Component {
       },
       options: {
         animation: {
-          duration: animation,
+          duration: animationDuration,
         }
       }
     })
@@ -47,7 +47,7 @@ class PieChart extends React.Component {
   
   // Once the PieChart component renders and the ref is assigned to the right DOM component, add the chart in via Chart.JS
   componentDidMount () {
-    this.createChart(this.props.data, this.pieChartLocation, 2000);
+    this.createChart(this.props.data, this.pieChartLocation, 800);
   }
 
   componentDidUpdate () {
