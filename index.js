@@ -19,6 +19,12 @@ module.exports = {
       app.get('/ping', function(req, res) {
         res.status(200).json(db);
       });
+      // route for index.HTML to request bundle.js
+      app.get('/build', function(req, res) {
+        res.sendFile(path.join(__dirname, 'build/bundle.js'), {}, function(err) {
+          res.status(err.status).send('could not find bundle js file');
+        });
+      });
     }
   },
   // storing request object data into db
