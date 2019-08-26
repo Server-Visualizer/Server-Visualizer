@@ -12,7 +12,9 @@ module.exports = {
       // developer can provide path as second argument, or default to "SerVis"
       app.get(`/${route ? route : "SerVis"}`, function(req, res) {
         res.sendFile(path.join(__dirname + '/client/index.html'), {}, function(err) {
-          res.status(err.status).send('could not find HTML file');
+          if (err) {
+            res.status(err.status).send('could not find HTML file');
+          }
         });
       });
       // creates a route to send data from db
@@ -22,7 +24,9 @@ module.exports = {
       // route for index.HTML to request bundle.js
       app.get('/build', function(req, res) {
         res.sendFile(path.join(__dirname, 'build/bundle.js'), {}, function(err) {
-          res.status(err.status).send('could not find bundle js file');
+          if (err) {
+            res.status(err.status).send('could not find bundle js file')
+          };
         });
       });
     }
