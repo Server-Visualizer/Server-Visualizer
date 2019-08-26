@@ -9,6 +9,7 @@ class Requests extends React.Component {
     });
     return (
       <div id="request-container">
+      <h3 id='heading'>Server Activities</h3>
       {requestComponents}
       </div>
     )

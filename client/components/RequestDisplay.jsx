@@ -8,10 +8,10 @@ class RequestDisplay extends React.Component {
     const parsedElapsedTime = elapsedTime.toPrecision(1);
     return (
       <div className="request">
-        <p>Method: {method}</p>
-        <p>Status: {status}</p>
-        <p>Request Time: {parsedReqTime}</p>
-        <p>Processing Time: {parsedElapsedTime}ms</p>
+        <p><strong>Method:</strong> {method}</p>
+        <p><strong>Status:</strong> {status}</p>
+        <p><strong>Request Time:</strong> {parsedReqTime}</p>
+        <p><strong>Processing Time:</strong> {parsedElapsedTime}ms</p>
       </div>
     )
   }
