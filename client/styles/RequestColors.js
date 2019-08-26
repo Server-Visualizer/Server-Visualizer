@@ -6,6 +6,6 @@ PUT: 'rgba(153, 102, 255, 0.7)', // PUT
 NONE: 'rgba(130, 130, 130, 0.7)', // if no requests have been recorded yet
 };
 
-export default function randomColors (requests) {
+export default function (requests) {
   return requests.map((requestType) => requestColors[requestType]);
 };
