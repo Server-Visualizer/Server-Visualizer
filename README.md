@@ -21,7 +21,7 @@ npm install server-visualizer
 const serverVisualizer = require('server-visualizer');
 
 // pass in reference to instance of app to add development routes
-// developer can set path to visualizer or accept default route to '/SerViz'
+// developer can set path to visualizer or accept default route to '/SerVis'
 serverVisualizer.start(app[, route])();
 
 // routes added
