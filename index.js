@@ -38,6 +38,7 @@ module.exports = {
         if (err) {
           res.status(err.status.send('connection timed out'))
         }
+        const start = process.hrtime();
         // calculates elapsed time in [seconds, nanoseconds]
         const end = process.hrtime(start);
         // converts end array into milliseconds
