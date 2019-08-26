@@ -21,7 +21,7 @@ class App extends React.Component {
       this.setState({ requests: requests, tobeRendered: [<Graphs key='Graphs' />, <Requests key='Requests' />] });
     })();
   }
-  
+
   render() {
     return (
       <div id="app">
@@ -32,36 +32,5 @@ class App extends React.Component {
     )
   }
 }
-
-// App.contextType = RequestContext;
-
-// const App = () => {
-//   // const [clicks, setClick] = useState([{ wow: 0 }]);
-//   const [activities, updateActivities] = useState({});
-
-//   useEffect(() => {
-    // fetch('https://sv-mock-data.herokuapp.com/')
-    //   // Parsing the response into a readable JS array
-    //   .then(res => res.json())
-    //   // After converting, store the activities in our state 
-    //   .then(res => {
-    //     updateActivities(res);
-    //     console.log(activities);
-    //   })
-    //   .catch(err => {
-    //     throw err;
-    //   }); 
-//   }, []);
-
-  // return (
-  //   <div>
-  //     Hello
-  //     <Graphs />
-  //     <Requests />
-  //     {/* <button type="button" onClick={()=>{ setClick({ wow: clicks.wow + 1 }) }}>Test</button> */}
-  //   </div>
-  // )
-// }
-
 
 export default App;
