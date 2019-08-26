@@ -35,6 +35,9 @@ module.exports = {
       // time at request start
       // after response is sent, update db with req & res data
       res.on('finish', (err, data) => {
+        if (err) {
+          res.status(err.status.send('connection timed out'))
+        }
         // calculates elapsed time in [seconds, nanoseconds]
         const end = process.hrtime(start);
         // converts end array into milliseconds
