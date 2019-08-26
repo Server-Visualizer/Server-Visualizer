@@ -12,16 +12,6 @@ class App extends React.Component {
     };    
   }
 
-  render() {
-    return (
-      <div id="app">
-        <RequestContext.Provider value={this.state.requests}>
-          {this.state.tobeRendered}
-        </RequestContext.Provider>
-      </div>
-    )
-  }
-
   componentDidMount() {
     (async () => {
       // Grab requests from our mock server
@@ -30,6 +20,16 @@ class App extends React.Component {
       const requests = await fetched.json();
       this.setState({ requests: requests, tobeRendered: [<Graphs key='Graphs' />, <Requests key='Requests' />] });
     })();
+  }
+  
+  render() {
+    return (
+      <div id="app">
+        <RequestContext.Provider value={this.state.requests}>
+          {this.state.tobeRendered}
+        </RequestContext.Provider>
+      </div>
+    )
   }
 }
 

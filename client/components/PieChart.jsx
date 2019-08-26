@@ -8,13 +8,7 @@ class PieChart extends React.Component {
     // Initializing a React ref as an instance property for access to the DOM element where we would store the chart
     this.pieChartLocation = React.createRef();
   }
-  render() {
-    return (
-      <div id="pie-chart-container">
-        <canvas id="pie-chart" ref={this.pieChartLocation}></canvas>
-      </div>
-    )
-  }
+  
   // Once the PieChart component renders and the ref is assigned to the right DOM component, add the chart in via Chart.JS
   componentDidMount () {
     // Saving the count for every HTTP request type
@@ -44,6 +38,15 @@ class PieChart extends React.Component {
       },
     })
   }
+    
+  render() {
+    return (
+      <div id="pie-chart-container">
+        <canvas id="pie-chart" ref={this.pieChartLocation}></canvas>
+      </div>
+    )
+  }
+
 }
 
 export default PieChart;
