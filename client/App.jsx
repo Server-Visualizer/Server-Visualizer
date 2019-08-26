@@ -11,15 +11,6 @@ class App extends React.Component {
       tobeRendered: [],
     };    
   }
-  componentDidMount() {
-    (async () => {
-      // Grab requests from our mock server
-      const fetched = await fetch('https://sv-mock-data.herokuapp.com/');
-      // Parsing the response into a readable JS array
-      const requests = await fetched.json();
-      this.setState({ requests: requests, tobeRendered: [<Graphs key='Graphs' />, <Requests key='Requests' />] });
-    })();
-  }
 
   render() {
     return (
@@ -29,6 +20,16 @@ class App extends React.Component {
         </RequestContext.Provider>
       </div>
     )
+  }
+
+  componentDidMount() {
+    (async () => {
+      // Grab requests from our mock server
+      const fetched = await fetch('https://sv-mock-data.herokuapp.com/');
+      // Parsing the response into a readable JS array
+      const requests = await fetched.json();
+      this.setState({ requests: requests, tobeRendered: [<Graphs key='Graphs' />, <Requests key='Requests' />] });
+    })();
   }
 }
 
