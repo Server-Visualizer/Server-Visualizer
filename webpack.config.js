@@ -33,6 +33,6 @@ module.exports = {
   },
   devServer: {
     publicPath: '/client/build/',
-    port: 8060,
+    port: 8080,
   }
 }

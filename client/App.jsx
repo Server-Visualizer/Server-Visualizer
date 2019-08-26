@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Graphs from './containers/GraphContainer.jsx';
 import Requests from './containers/RequestContainer.jsx';
 import RequestContext from './contexts/RequestContext.jsx';
@@ -8,6 +8,7 @@ class App extends React.Component {
     super();
     this.state = {
       requests: [],
+      tobeRendered: [],
     };    
   }
   componentDidMount() {
@@ -16,25 +17,22 @@ class App extends React.Component {
       const fetched = await fetch('https://sv-mock-data.herokuapp.com/');
       // Parsing the response into a readable JS array
       const requests = await fetched.json();
-      this.setState({ requests: requests });
+      this.setState({ requests: requests, tobeRendered: [<Graphs key='Graphs' />, <Requests key='Requests' />] });
     })();
   }
 
   render() {
-    console.log('context API test', this.context);
     return (
-      <div>
-        Hello
+      <div id="app">
         <RequestContext.Provider value={this.state.requests}>
-          <Graphs />
-          <Requests />
+          {this.state.tobeRendered}
         </RequestContext.Provider>
       </div>
     )
   }
 }
 
-App.contextType = RequestContext;
+// App.contextType = RequestContext;
 
 // const App = () => {
 //   // const [clicks, setClick] = useState([{ wow: 0 }]);
