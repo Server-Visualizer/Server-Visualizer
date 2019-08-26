@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "build": "webpack",
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server NODE_DEV=development"
   },
   "repository": {
     "type": "git",
