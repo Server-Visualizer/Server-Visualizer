@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   db: [],
-  // start() creates three routes to be used in development
+  // start() creates two routes to be used in development
   start: function(app, route) {
     if (!app) throw new Error('instance of app should be first argument')
     // making copy of db
@@ -18,6 +18,7 @@ module.exports = {
         });
       });
       // creates a route to send data from db
+      // Called from our index.html
       app.get('/ping', function(req, res) {
         res.status(200).json(db);
       });
