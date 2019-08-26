@@ -2,14 +2,21 @@
 Express middleware that helps developers visualize their Express server activities.
 
 
-## Usage
+## About
+- Server-Visualizer allows developers to monitor request methods, response status codes, and related timings. 
 
-Terminal:
+- Data can be accessed using a GUI served from the same development port as the main app. 
+
+- Displays a pie chart and a list of requests updated in real time.
+
+
+## Install
 ```shell
 npm install server-visualizer
 ```
 
-Express app:
+
+## Usage
 ```javascript
 const serverVisualizer = require('server-visualizer');
 
@@ -19,3 +26,6 @@ serverVisualizer.start(app)();
 // records request and response activities
 app.use(serverVisualizer.run());
 ```
+
+## License
+This project is licensed under the MIT License - see the LICENSE.md file for details.
