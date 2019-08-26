@@ -47,7 +47,7 @@ module.exports = {
         const end = process.hrtime(start);
         // converts end array into milliseconds
         const endTime = (end[0] * 1000) + (end[1] / 1000000);
-        db.push({
+        db.unshift({
           method: req.method, 
           // instantaneous time in milliseconds
           reqTime: new Date().getTime(), 
