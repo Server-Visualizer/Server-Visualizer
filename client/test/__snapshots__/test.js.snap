@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component renders without crashing 1`] = `
+<div
+  id="app"
+/>
+`;
+
+exports[`App component renders without crashing 2`] = `ReactWrapper {}`;
+
+exports[`App component renders without crashing 3`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        id="app"
+      />
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      id="app"
+    />
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`App component should render initial layout 1`] = `
+Array [
+  <div
+    id="app"
+  >
+    <Context.Provider
+      value={Array []}
+    />
+  </div>,
+]
+`;
+
+exports[`Graph Container component renders correctly 1`] = `ShallowWrapper {}`;
+
+exports[`Graph Container component should render initial layout 1`] = `
+Array [
+  <div
+    id="graph-container"
+  >
+    <PieChart
+      data={Object {}}
+    />
+  </div>,
+]
+`;
+
+exports[`Request Display component renders correctly 1`] = `ShallowWrapper {}`;
+
+exports[`Request Display component should render initial layout 1`] = `
+Array [
+  <div
+    className="request"
+  >
+    <p>
+      Method: 
+      GET
+    </p>
+    <p>
+      Status: 
+      200
+    </p>
+    <p>
+      Request Time: 
+      7:00:00 PM
+    </p>
+    <p>
+      Processing Time: 
+      1e+1
+      ms
+    </p>
+  </div>,
+]
+`;
