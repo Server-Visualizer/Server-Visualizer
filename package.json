@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "build": "webpack",
-    "dev": "webpack-dev-server NODE_DEV=development"
+    "build": "NODE_ENV=production webpack",
+    "dev": "NODE_ENV=development webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -70,6 +70,7 @@
     "style-loader": "^1.0.0",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.7",
-    "webpack-dev-server": "^3.8.0"
+    "webpack-dev-server": "^3.8.0",
+    "babel-polyfill": "^6.26.0"
   }
 }

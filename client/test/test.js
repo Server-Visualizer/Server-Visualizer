@@ -10,7 +10,7 @@ import Graphs from '../containers/GraphContainer.jsx';
 import Requests from '../containers/RequestContainer.jsx';
 // Components 
 import RequestDisplay from '../components/RequestDisplay.jsx';
-import PieChart from '../components/PieChart.jsx'; 
+import PieChart from '../components/HTTPRequestPieChart.jsx'; 
 // Import mock fetch data
 import fetch from './__mocks__/fetch'; 
 global.fetch = fetch; 

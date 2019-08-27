@@ -22,7 +22,7 @@ module.exports = {
         res.status(200).json(db);
       });
       // route for index.HTML to request bundle.js
-      app.get('/build', function(req, res) {
+      app.get('/build/bundle.js', function(req, res) {
         res.sendFile(path.join(__dirname, '/client/build/bundle.js'), {}, function(err) {
           if (err) {
             res.status(err.status).send('could not find bundle js file')
