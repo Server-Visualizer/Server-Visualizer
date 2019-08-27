@@ -1,7 +1,9 @@
 const path = require('path');
 
+const mode = process.env.NODE_ENV;
+
 module.exports = {
-  mode: 'development',
+  mode: mode,
   entry: path.resolve(__dirname, 'client/index.js'),
   output: {
     path: path.resolve(__dirname, 'client/build'),
