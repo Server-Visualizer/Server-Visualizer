@@ -1,0 +1,42 @@
+.request {
+    border: solid 1px black;
+}
+
+body {
+  height: 100vh;
+  background-color: #F4F3F0; 
+  font-family: sans-serif; 
+}
+
+#app {
+  display: flex;
+  align-content: stretch;
+  #graph-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-right: 100px;
+  }
+  #request-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    height: 100vh;
+  }
+}
+
+.request {
+  font-size: 14px;
+  width: 400px; 
+  float: right;
+  border: 6px solid white;
+  margin-bottom: 5px;
+  line-height: 60%;
+  border-radius: 5px; 
+  background-color: white;
+}
+
+#pie-chart-container {
+  width: 100%;
+}
