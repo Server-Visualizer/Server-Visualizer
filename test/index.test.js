@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 
 const index = require('../index.js');
+const BabelPolyfill = require('babel-polyfill'); 
 
 expect.extend({
   toBeWithinRange(received, floor, ceiling) {

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 
-class RequestDisplay extends React.Component {
+class RequestDisplay extends Component {
   render() {
     const { method, reqTime, elapsedTime, status } = this.props.reqInfo;
     const parsedReqTime = new Date(reqTime).toLocaleTimeString();

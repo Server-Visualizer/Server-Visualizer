@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Chart from 'chart.js';
 
-class CodeChart extends React.Component {
+class CodeChart extends Component {
   constructor(props) {
     super(props);
     // Initializing a React ref as an instance property for access to the DOM element where we would store the chart
@@ -50,7 +50,7 @@ class CodeChart extends React.Component {
       }
     })
   }
-  
+
   // Once the CodeChart component renders and the ref is assigned to the right DOM component, add the chart in via Chart.JS
   componentDidMount () {
     this.createChart(this.props.data, this.codeChartLocation, 800);

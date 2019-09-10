@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Graphs from './containers/GraphContainer.jsx';
 import Requests from './containers/RequestContainer.jsx';
 import RequestContext from './contexts/RequestContext.jsx';
 import Placeholder from './components/Placeholder.jsx';
 
-class App extends React.Component {
+class App extends Component {
   constructor() {
     super();
     this.state = {

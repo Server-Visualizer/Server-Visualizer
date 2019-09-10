@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Chart from 'chart.js';
 import requestColors from '../styles/RequestColors';
 
-class PieChart extends React.Component {
+class PieChart extends Component {
   constructor(props) {
     super(props);
     // Initializing a React ref as an instance property for access to the DOM element where we would store the chart

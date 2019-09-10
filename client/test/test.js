@@ -5,9 +5,8 @@ import Adapter from 'enzyme-adapter-react-16';
 import BabelPolyfill from 'babel-polyfill'; 
 // Main app 
 import App from '../App.jsx'; 
-// Containers
+// Container
 import Graphs from '../containers/GraphContainer.jsx';
-import Requests from '../containers/RequestContainer.jsx';
 // Components 
 import RequestDisplay from '../components/RequestDisplay.jsx';
 import PieChart from '../components/HTTPRequestPieChart.jsx'; 
@@ -32,11 +31,10 @@ describe('App component', () => {
       // fetch using the mock fetch method
       const fetchSpy = jest.spyOn(window, 'fetch');
       const wrapper = shallow(<App />); 
-      expect(fetchSpy).toBeCalled(); 
+      expect(fetchSpy).toHaveBeenCalledTimes(1); 
     })
   })
 }); 
-
 // GraphContainer should render 
 describe('Graph Container component', () => {
   // test the initial layout
@@ -50,7 +48,6 @@ describe('Graph Container component', () => {
         expect(wrapper).toMatchSnapshot(); 
     }); 
 }); 
-
 // Request Display component testing
 describe('Request Display component', () => {
   // test the initial layout
